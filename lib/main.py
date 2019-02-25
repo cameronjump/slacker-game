@@ -13,17 +13,17 @@ BOARD_SIZE = BOARD_WIDTH, BOARD_HEIGHT = 12, 20
 SCREEN_SIZE = SCREEN_WIDTH, SCREEN_HEIGHT = 240, 400
 TILE_SIZE = TILE_WIDTH, TILE_HEIGHT = SCREEN_WIDTH / BOARD_WIDTH, SCREEN_HEIGHT / BOARD_HEIGHT
 
-TILE_COLOR = (127, 127, 255)
-TILE_COLOR_ALT = (255, 127, 127)
-TILE_COLOR_LOSE = (64, 64, 128)
-TILE_COLOR_ALT_LOSE = (127, 64, 64)
+TILE_COLOR = (255, 127, 0)
+TILE_COLOR_ALT = (255, 255, 255)
+TILE_COLOR_LOSE = (255, 100, 0)
+TILE_COLOR_ALT_LOSE = (255, 255, 200)
 
 BLACK = (0,0,0)
 
-LEVEL_SPEED = ( 80, 80, 75, 75, 70, 70, 65, 60, 55, 50,
-				45, 40, 35, 30, 32 )
-MAX_WIDTH = (3, 3, 3, 3, 2, 2, 2, 2, 1, 1,
-				1, 1, 1, 1, 1)
+LEVEL_SPEED = ( 100, 100, 85, 85, 80, 80, 75, 70, 65, 45,
+				45, 40, 35, 30, 25 )
+MAX_WIDTH = (3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+				3, 3, 3, 3, 3)
 				
 COLOR_CHANGE_Y = 10 # The block below which are displayed in the alternate color
 WIN_LEVEL = 15
@@ -65,7 +65,9 @@ def main():
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT: 
 				keep_running = False
-			elif event.type == KEYDOWN:				if event.key == K_SPACE:					key_hit()
+			elif event.type == KEYDOWN:
+				if event.key == K_SPACE:
+					key_hit()
 				elif event.key == K_ESCAPE:
 					if game_state == INTRO:
 						keep_running = False
