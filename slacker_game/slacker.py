@@ -97,14 +97,14 @@ class Slacker:
     SCREEN_SIZE = SCREEN_WIDTH, SCREEN_HEIGHT = 280, 600
     TILE_SIZE = 40
 
-    COLOR_MAJOR = TANGO['Scarlet Red']
-    COLOR_MINOR = TANGO['Sky Blue']
+    COLOR_MAJOR = TANGO['Orange']
+    COLOR_MINOR = TANGO['Orange']
     BG_COLOR = TANGO['Aluminium'][5]
     ICON = pygame.image.load(data('icon.png'))
 
-    MAX_WIDTH = (1,)*7 + (2,)*5 + (3,)*3
-    MAX_SPEED = 70
-    SPEED_DIFF = 5
+    MAX_WIDTH = (3,)*7 + (3,)*5 + (3,)*3
+    MAX_SPEED = 60
+    SPEED_DIFF = 6
     INIT_SPEED = MAX_SPEED + (BOARD_HEIGHT + 1)*SPEED_DIFF
     COLOR_CHANGE_Y = 5  # blocks below which are displayed in the alternate color
     WIN_LEVEL = 15
@@ -118,7 +118,7 @@ class Slacker:
         self.board = [[False] * self.BOARD_WIDTH for _ in range(self.BOARD_HEIGHT)]
         self.game_state = self.PLAYING if restart else self.INTRO
         self.falling_tiles = []
-        self.screen = pygame.display.set_mode(self.SCREEN_SIZE)
+        self.screen = pygame.display.set_mode(self.SCREEN_SIZE, pygame.FULLSCREEN)
         self.speed = self.INIT_SPEED + randrange(5)
         self.speed_ratio = 1.0
         self.width = self.MAX_WIDTH[-1]
